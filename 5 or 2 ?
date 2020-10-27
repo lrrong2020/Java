@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Java1 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Please enter an integer");
+		int no = input.nextInt();
+		boolean result1 = (no % 5 == 0);
+		boolean result2 = (no % 2 == 0);
+		if (result1){
+			System.out.println("HiFive");
+			if (result2)
+				System.out.println("HiEven");
+		}
+		else if (result2){
+			System.out.println("HiEven");
+		}
+		
+
+	}
+
+}
