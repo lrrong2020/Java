@@ -1,0 +1,12 @@
+import java.util.Scanner;
+public class Java2 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Is xxx a sb?" + '\n' + "Enter yes or no");
+		String s2 = "yes";
+		String s1 = input.next();		
+		System.out.println(s1.equals(s2));
+		}
+
+	}
