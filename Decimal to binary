@@ -1,0 +1,50 @@
+import java.util.Scanner;
+public class ToBinary {
+	 public static void main(String[] args){
+		 //Get input of capacity and decimal number
+		 Scanner input = new Scanner(System.in);
+		 System.out.print("Enter max capacity(number of bits):");
+		 int capacity = input.nextInt();
+		 System.out.println("Enter a decimal number:");	
+		 
+		 
+		 //Compute result
+		 int decimal = input.nextInt();
+		 int dividend = decimal;
+		 int remainder, quotient;
+		 int[] result= new int[capacity];	 
+		 int length;
+		 		 
+		 for(int countToLength = 0;;dividend = quotient){
+		 remainder = dividend % 2;
+		 quotient = dividend / 2;
+		 
+		 	if(remainder == 1)
+			 result[countToLength] = 1;
+		 	else result[countToLength] = 0;
+		 			 						 
+		 	if(quotient == 1){
+			 countToLength += 1;
+			 //Check if the length is out of range
+			 
+			 	if(countToLength + 1 > capacity){			 			 
+				 System.out.println("Out of capacity.");
+				 System.exit(0);
+			 	}
+			 	
+			 result[countToLength] = 1;			
+			 length= countToLength + 1;
+			 break;
+		 	}
+		 	else countToLength += 1;
+		 }
+		 
+		 
+		 //Print the result
+		 System.out.println(decimal + "(base 10) is");
+		 for(int i = length - 1;i >= 0;i--){
+			 System.out.print(result[i]);
+		 }
+		 System.out.println("(base 2) " + "length of bits is " + length);
+		 }
+	}
